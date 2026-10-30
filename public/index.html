@@ -3,229 +3,372 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Seek Trinity Groves | Cajun Soul Food, Bar &amp; Lounge in Dallas</title>
-  <meta name="theme-color" content="#3e7574">
-  <meta name="description" content="Southern Cajun soul food, craft cocktails and a skyline patio at Trinity Groves in Dallas. Reserve a table on Resy.">
+  <title>Seek Trinity Groves | Restaurant, Bar &amp; Lounge in Dallas</title>
+  <meta name="description" content="Seek is a restaurant, bar and lounge at Trinity Groves in Dallas. Friday happy hour 7 to 10 PM, Wine Wednesday, R&amp;B Friday, Tequila Therapy Saturday and Sundays on the patio.">
+  <meta name="theme-color" content="#0c0a0b">
+  <link rel="icon" href="img/logo.png" type="image/png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Seek Trinity Groves | Restaurant, Bar &amp; Lounge">
+  <meta property="og:description" content="Dinner, cocktails and a covered patio at Trinity Groves in Dallas. R&amp;B every Friday and Sunday.">
+  <meta property="og:image" content="img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@400;500;600&display=swap">
+  <link rel="preload" as="image" href="img/hero-wide-1280.webp" media="(min-width: 760px)">
+  <link rel="preload" as="image" href="img/hero-tall-853.webp" media="(max-width: 759px)">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Seek Trinity Groves | Cajun Soul Food, Bar &amp; Lounge in Dallas">
-  <meta property="og:description" content="Southern Cajun soul food, craft cocktails and a skyline patio at Trinity Groves in Dallas.">
+
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "Seek Trinity Groves",
-  "description": "Southern Cajun soul food, craft cocktails and a skyline patio at Trinity Groves in Dallas.",
-  "servesCuisine": [
-    "Cajun",
-    "Southern",
-    "Soul food"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "3011 Gulden Ln, Ste 112",
-    "addressLocality": "Dallas",
-    "addressRegion": "TX",
-    "postalCode": "75212",
-    "addressCountry": "US"
-  },
-  "acceptsReservations": "https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves",
-  "sameAs": [
-    "https://www.instagram.com/seek_dallas/"
-  ],
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Wednesday",
-      "opens": "18:00",
-      "closes": "00:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Thursday",
-      "opens": "18:00",
-      "closes": "22:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Friday",
-      "opens": "18:00",
-      "closes": "02:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "15:00",
-      "closes": "01:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
-      "opens": "18:00",
-      "closes": "22:00"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Seek Trinity Groves",
+    "description": "Restaurant, bar and lounge at Trinity Groves in Dallas.",
+    "image": "img/og.jpg",
+    "address": {"@type": "PostalAddress", "streetAddress": "3011 Gulden Ln, Ste 112", "addressLocality": "Dallas", "addressRegion": "TX", "postalCode": "75212", "addressCountry": "US"},
+    "acceptsReservations": "https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves",
+    "sameAs": ["https://www.instagram.com/seek.trinity/", "https://www.facebook.com/profile.php?id=61593301493439"],
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "19:00", "closes": "23:59"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "18:00", "closes": "22:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "18:00", "closes": "01:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "15:00", "closes": "01:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "15:00", "closes": "22:00"}
+    ]
+  }
   </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="sprig" viewBox="0 0 160 40"><path d="M6 20h148" stroke="#e7bd75" stroke-width="1.5" fill="none"/><g fill="#457557" stroke="#e7bd75" stroke-width="1"><ellipse cx="30" cy="11" rx="14" ry="5" transform="rotate(-20 30 11)"/><ellipse cx="30" cy="29" rx="14" ry="5" transform="rotate(20 30 29)"/><ellipse cx="58" cy="10" rx="14" ry="5" transform="rotate(-20 58 10)"/><ellipse cx="58" cy="30" rx="14" ry="5" transform="rotate(20 58 30)"/><ellipse cx="102" cy="10" rx="14" ry="5" transform="rotate(20 102 10)"/><ellipse cx="102" cy="30" rx="14" ry="5" transform="rotate(-20 102 30)"/><ellipse cx="130" cy="11" rx="14" ry="5" transform="rotate(20 130 11)"/><ellipse cx="130" cy="29" rx="14" ry="5" transform="rotate(-20 130 29)"/></g><circle cx="80" cy="20" r="3.5" fill="#e7bd75"/></symbol></svg>
 
-  <header class="site-header">
-    <a class="logo" href="#top" aria-label="Seek Trinity Groves, home">Seek</a>
-    <nav class="nav" aria-label="Main">
-      <a href="#story">Our story</a><a href="#menu">Menu</a><a href="#lounge">Lounge</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
-    </nav>
-    <a class="btn btn-sm" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Reserve</a>
-    <details class="mobile-nav">
-      <summary><span class="sr">Menu</span><i></i></summary>
-      <nav aria-label="Mobile">
-        <a href="#story">Our story</a><a href="#menu">Menu</a><a href="#lounge">Lounge</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+  <header class="site-header" id="top">
+    <div class="bar">
+      <a class="brand" href="#top" aria-label="Seek Trinity Groves, back to top">
+        <img src="img/logo.png" width="307" height="130" alt="Seek Trinity Groves">
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#happy-hour">Happy Hour</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#events">Events</a>
+        <a href="#visit">Visit</a>
       </nav>
-    </details>
+      <a class="btn btn-pink btn-sm header-cta" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Reserve</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Sections" hidden>
+      <a href="#happy-hour">Happy Hour</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#events">Book an Event</a>
+      <a href="#visit">Hours &amp; Location</a>
+    </nav>
   </header>
 
   <main id="main">
-    <!-- Photos: drop files into an /images folder and match the filenames below. Gradients show until then. -->
-    <section class="hero" id="top">
-      <div class="hero-copy">
-        <p class="label">A culinary journey</p>
-        <h1>Welcome to Seek</h1>
-        <p class="lede">Cajun soul food, craft cocktails and a patio facing the Dallas skyline.</p>
-        <a class="btn" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Reservations</a>
-        <p class="open-now" id="openNow" aria-live="polite"></p>
+    <!-- 1. HERO SLIDESHOW + RESERVE -->
+    <section class="hero" aria-labelledby="heroTitle" aria-roledescription="carousel">
+      <div class="slides" id="heroSlides" aria-live="off">
+        <figure class="slide is-active" data-caption="The bar">
+          <picture>
+            <source media="(min-width: 760px)" srcset="img/hero-wide-640.webp 640w, img/hero-wide-1280.webp 1280w" sizes="100vw">
+            <img src="img/hero-tall-853.webp" srcset="img/hero-tall-640.webp 640w, img/hero-tall-853.webp 853w" sizes="100vw" width="853" height="1050" alt="The Seek bar under a glowing floral light installation" fetchpriority="high">
+          </picture>
+        </figure>
+        <figure class="slide" data-caption="The lounge">
+          <picture>
+            <source media="(min-width: 760px)" srcset="img/hero-s2-wide-640.webp 640w, img/hero-s2-wide-1280.webp 1280w" sizes="100vw">
+            <img src="img/hero-s2-tall-853.webp" srcset="img/hero-s2-tall-640.webp 640w, img/hero-s2-tall-853.webp 853w" sizes="100vw" width="853" height="1050" loading="lazy" alt="Lounge with pink banquettes, tropical wallpaper and hanging greenery lights">
+          </picture>
+        </figure>
+        <figure class="slide" data-caption="The kitchen">
+          <picture>
+            <source media="(min-width: 760px)" srcset="img/hero-s3-wide-640.webp 640w, img/hero-s3-wide-1280.webp 1280w" sizes="100vw">
+            <img src="img/hero-s3-tall-1024.webp" srcset="img/hero-s3-tall-640.webp 640w, img/hero-s3-tall-1024.webp 1024w" sizes="100vw" width="1024" height="1260" loading="lazy" alt="A spread of wings, fried shrimp, catfish, pasta and fries with a margarita">
+          </picture>
+        </figure>
+        <figure class="slide" data-caption="The patio">
+          <picture>
+            <source media="(min-width: 760px)" srcset="img/hero-s4-wide-640.webp 640w, img/hero-s4-wide-1280.webp 1280w" sizes="100vw">
+            <img src="img/hero-s4-tall-853.webp" srcset="img/hero-s4-tall-640.webp 640w, img/hero-s4-tall-853.webp 853w" sizes="100vw" width="853" height="1050" loading="lazy" alt="Covered patio with marble tables, a floral banquette and hanging plants">
+          </picture>
+        </figure>
+        <figure class="slide" data-caption="Cocktails">
+          <picture>
+            <source media="(min-width: 760px)" srcset="img/hero-s5-wide-640.webp 640w, img/hero-s5-wide-1280.webp 1280w" sizes="100vw">
+            <img src="img/hero-s5-tall-830.webp" srcset="img/hero-s5-tall-640.webp 640w, img/hero-s5-tall-830.webp 830w" sizes="100vw" width="830" height="1022" loading="lazy" alt="Frozen strawberry cocktail in a flute with a fresh strawberry">
+          </picture>
+        </figure>
       </div>
-      <img class="hero-logo" src="images/logo.jpg" alt="Seek Trinity Groves logo" width="480" height="480">
-    </section>
 
-    <section class="band">
-      <svg class="sprig" viewBox="0 0 160 40" aria-hidden="true"><use href="#sprig"/></svg>
-      <h2 class="caps">Savor the art of luxury dining</h2>
-      <p>Seek pairs a soulful Cajun-American kitchen with a lounge-style bar in the heart of Trinity Groves. Expect bold Louisiana flavor, Southern warmth and cocktails built to match.</p>
-      <a class="btn" href="#menu">View menu</a>
-    </section>
-
-    <section class="split" id="story">
-      <div class="photo" role="img" aria-label="Seek dining room" style="--img:url('images/dining-room.jpg')"></div>
-      <div class="copy">
-        <p class="label">Our story</p>
-        <h2>A celebration of flavor, culture and connection</h2>
-        <p>Step inside and the city slips away. Warm light, plush seating and good music set the tone for a long evening, whether it&rsquo;s a first date, a birthday or a night out with the whole group.</p>
-        <p>The kitchen cooks Southern and Cajun comfort food with a little polish, and the bar keeps the drinks coming. Out on the patio, the downtown skyline does the rest.</p>
-        <a class="btn" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Reserve a table</a>
-      </div>
-    </section>
-
-    <section class="split reverse dark" id="menu">
-      <div class="photo" role="img" aria-label="Fried catfish plate" style="--img:url('images/catfish-plate.jpg')"></div>
-      <div class="copy">
-        <p class="label">Menu</p>
-        <h2>Seek Trinity Groves</h2>
-        <p>Soulful plates and seafood made for sharing, alongside a full cocktail list.</p>
-        <ul class="dishes">
-          <li><h3>Hot-sauce marinated catfish</h3><p>Catfish marinated in hot sauce and served as a plate.</p></li>
-          <li><h3>Buffalo hot wings</h3><p>Half off during R&amp;B Happy Hour.</p></li>
-          <li><h3>Seafood boils</h3><p>Cajun-seasoned and built for the table.</p></li>
-          <li><h3>Cocktails</h3><p>7 for $7 on Fridays.</p></li>
-        </ul>
+      <div class="hero-inner">
+        <p class="eyebrow"><span class="status" id="openStatus">Trinity Groves &middot; Dallas</span></p>
+        <h1 id="heroTitle"><span>Restaurant.</span> <span>Bar.</span> <em>Lounge.</em></h1>
+        <p class="lede">Dinner, cocktails and a covered patio in the heart of Trinity Groves, with R&amp;B every Friday and Sunday.</p>
         <div class="actions">
-          <a class="btn" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">View menu</a>
-          <a class="btn btn-ghost" href="#lounge">Drinks</a>
+          <a class="btn btn-pink" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Reserve</a>
+          <a class="btn btn-ghost" href="#menu">View menu</a>
+        </div>
+      </div>
+
+      <div class="hero-foot">
+        <ul class="hero-facts" aria-label="At a glance">
+          <li><span>Tonight</span><strong id="todayHours">See hours</strong></li>
+          <li><span>On tonight</span><strong id="todayEvent">See the lineup</strong></li>
+          <li><span>Happy hour</span><strong>Fri 7&ndash;10 PM</strong></li>
+        </ul>
+        <div class="slide-controls" role="group" aria-label="Slideshow controls">
+          <span class="slide-caption" id="slideCaption" aria-live="polite">The bar</span>
+          <div class="dots" id="slideDots"></div>
+          <button class="slide-btn" type="button" id="slidePause" aria-label="Pause slideshow" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-pause"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-play"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
         </div>
       </div>
     </section>
 
-    <section class="lounge" id="lounge">
-      <p class="label">Bar &amp; lounge</p>
-      <h2>Nights at Seek</h2>
-      <div class="nights">
-        <article><h3>Wednesday Night Interlude</h3><p class="when">Wednesdays, 6 PM to 12 AM</p><p>Relaxed vibes, drink specials and guest DJs.</p></article>
-        <article class="hot"><h3>Friday R&amp;B Happy Hour</h3><p class="when">Fridays, 7 PM to 10 PM</p><p>7 for $7 cocktails, plus half-off appetizers and wings.</p></article>
-        <article><h3>Saturday day parties</h3><p class="when">Saturdays, from 3 PM</p><p>Day parties and weekend specials. Hours shift for private events.</p></article>
+    <!-- 2. HAPPY HOUR + WEEKLY NIGHTS -->
+    <section class="happy" id="happy-hour" aria-labelledby="hhTitle">
+      <div class="wrap">
+        <div class="hh-intro">
+          <div class="section-head reveal">
+            <p class="eyebrow">Happy hour &middot; Every Friday</p>
+            <h2 id="hhTitle">Fridays, <em>seven to ten.</em></h2>
+            <p>Every Friday from 7 to 10 PM: $7 cocktails plus half-off appetizers and wings, with R&amp;B all night.</p>
+          </div>
+
+          <article class="wine reveal" aria-labelledby="wineTitle">
+            <p class="eyebrow">Every Wednesday &middot; 7&ndash;10 PM</p>
+            <h3 id="wineTitle">Wine Wednesday</h3>
+            <ul class="wine-deals">
+              <li><strong>$20</strong><span>Wine flights<small>4 wines</small></span></li>
+              <li><strong>$40</strong><span>Bottles of wine</span></li>
+              <li><strong>$10</strong><span>Glasses of wine</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="drinks">
+          <figure class="drink reveal">
+            <img src="img/hh-strawberry-640.webp" srcset="img/hh-strawberry-640.webp 640w, img/hh-strawberry-830.webp 830w" sizes="(min-width: 900px) 30vw, 80vw" width="830" height="1037" loading="lazy" alt="Frozen strawberry cocktail in a champagne flute with a fresh strawberry">
+          </figure>
+          <figure class="drink reveal">
+            <img src="img/hh-rosemary-640.webp" srcset="img/hh-rosemary-640.webp 640w, img/hh-rosemary-853.webp 853w" sizes="(min-width: 900px) 30vw, 80vw" width="853" height="1066" loading="lazy" alt="Pink cocktail over crushed ice with a rosemary sprig">
+          </figure>
+          <figure class="drink reveal">
+            <img src="img/hh-lemon-640.webp" srcset="img/hh-lemon-640.webp 640w, img/hh-lemon-853.webp 853w" sizes="(min-width: 900px) 30vw, 80vw" width="853" height="1066" loading="lazy" alt="Close-up of a pink cocktail on ice with a lemon wheel">
+          </figure>
+        </div>
+
+        <div class="lineup-head reveal">
+          <p class="eyebrow">The weekly lineup</p>
+          <h2>Every night <em>has a mood.</em></h2>
+        </div>
+        <ul class="nights" id="nights">
+          <li class="reveal" data-day="3">
+            <span class="day">Wed</span>
+            <div><h3>Wine Wednesday</h3><p>Wine flights, bottles and glasses on special from 7 to 10 PM.</p></div>
+          </li>
+          <li class="reveal" data-day="5">
+            <span class="day">Fri</span>
+            <div><h3>R&amp;B Friday</h3><p>Happy hour 7&ndash;10 PM with $7 cocktails and half-off apps and wings, then R&amp;B all night.</p></div>
+          </li>
+          <li class="reveal" data-day="6">
+            <span class="day">Sat</span>
+            <div><h3>Tequila Therapy</h3><p>Margaritas, tequila and Saturday energy. Doors at 3 PM.</p></div>
+          </li>
+          <li class="reveal" data-day="0">
+            <span class="day">Sun</span>
+            <div><h3>Sunday on the Patio</h3><p>R&amp;B on the covered patio from 3 PM.</p></div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section class="gallery" id="gallery">
-      <p class="label">Gallery</p>
-      <h2>Inside Seek</h2>
-      <div class="grid">
-        <div class="photo wide" role="img" aria-label="Patio with downtown skyline" style="--img:url('images/patio.jpg')"></div>
-        <div class="photo" role="img" aria-label="Cocktails at the bar" style="--img:url('images/cocktails.jpg')"></div>
-        <div class="photo" role="img" aria-label="Lounge seating" style="--img:url('images/lounge.jpg')"></div>
-        <div class="photo" role="img" aria-label="Seafood boil" style="--img:url('images/seafood-boil.jpg')"></div>
-        <div class="photo wide" role="img" aria-label="Guest DJ set" style="--img:url('images/dj-night.jpg')"></div>
+    <!-- 3. MENU -->
+    <section class="menu" id="menu" aria-labelledby="menuTitle">
+      <div class="wrap menu-grid">
+        <div class="menu-media reveal">
+          <img class="menu-main" src="img/menu-spread-640.webp" srcset="img/menu-spread-640.webp 640w, img/menu-spread-1280.webp 1280w" sizes="(min-width: 900px) 50vw, 100vw" width="1280" height="1024" loading="lazy" alt="Overhead spread of wings and fries, fried shrimp, fried catfish, loaded nachos and chicken pasta with a margarita">
+          <img class="menu-inset" src="img/menu-margarita-640.webp" srcset="img/menu-margarita-640.webp 640w, img/menu-margarita-1024.webp 1024w" sizes="(min-width: 900px) 20vw, 40vw" width="1024" height="1280" loading="lazy" alt="Salt-rimmed margarita with lime surrounded by shared plates">
+        </div>
+
+        <div class="menu-copy reveal">
+          <p class="eyebrow">The menu</p>
+          <h2 id="menuTitle">Plates to share, <em>drinks to linger.</em></h2>
+          <p>A kitchen built for the table and a bar built for the night.</p>
+
+          <div class="tabs" role="tablist" aria-label="Menu categories">
+            <button role="tab" id="tab-kitchen" aria-selected="true" aria-controls="panel-kitchen">Kitchen</button>
+            <button role="tab" id="tab-bar" aria-selected="false" aria-controls="panel-bar" tabindex="-1">Bar</button>
+          </div>
+
+          <ul class="dishes" role="tabpanel" id="panel-kitchen" aria-labelledby="tab-kitchen">
+            <li><h3>Wings &amp; Fries</h3><p>Buffalo or honey-glazed, seasoned fries, ranch.</p></li>
+            <li><h3>Fried Shrimp</h3><p>Golden shrimp, cocktail sauce, seasoned fries.</p></li>
+            <li><h3>Fried Catfish</h3><p>Crisp fillets, tartar sauce and fries.</p></li>
+            <li><h3>Chicken Pasta</h3><p>Grilled chicken over penne in a creamy sauce.</p></li>
+            <li><h3>Loaded Nachos</h3><p>Warm queso, pico de gallo, sour cream.</p></li>
+          </ul>
+          <ul class="dishes" role="tabpanel" id="panel-bar" aria-labelledby="tab-bar" hidden>
+            <li><h3>Signature Cocktails</h3><p>$7 during Friday happy hour, 7&ndash;10 PM.</p></li>
+            <li><h3>Margaritas &amp; Tequila</h3><p>The heart of Tequila Therapy Saturday.</p></li>
+            <li><h3>Wine by the Glass</h3><p>$10 on Wine Wednesday.</p></li>
+            <li><h3>Wine Flights</h3><p>Four wines for $20 on Wine Wednesday.</p></li>
+            <li><h3>Bottles</h3><p>$40 bottles on Wine Wednesday.</p></li>
+          </ul>
+
+          <a class="btn btn-gold" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Reserve</a>
+        </div>
       </div>
     </section>
 
-    <section class="feature">
-      <div class="photo bg" style="--img:url('images/patio-night.jpg')" aria-hidden="true"></div>
-      <div class="feature-copy">
-        <p class="label">The patio</p>
-        <h2>Evenings worth lingering over</h2>
-        <p>Settle in with a cocktail and watch the downtown skyline light up. Nights run late, especially on Fridays and Saturdays.</p>
-        <a class="btn" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Reserve a table</a>
+    <!-- 4. GALLERY: two rows scrolling in opposite directions -->
+    <section class="gallery" id="gallery" aria-labelledby="galTitle">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Gallery</p>
+          <h2 id="galTitle">Inside <em>Seek.</em></h2>
+          <p>Bird-of-paradise walls, raspberry booths, a gold mosaic bar and glass garage doors that open to the patio. Hover to pause, tap a photo to open it.</p>
+        </div>
+      </div>
+      <div class="marquee" data-gallery>
+        <div class="marquee-row">
+          <div class="track">
+            <button class="tile" type="button" data-full="img/m-garage-full.webp"><img src="img/m-garage.webp" width="720" height="480" loading="lazy" alt="Bar corner with gold mosaic shelving and glass garage doors open to the patio"></button>
+            <button class="tile" type="button" data-full="img/m-booths-full.webp"><img src="img/m-booths.webp" width="320" height="480" loading="lazy" alt="Raspberry pink booths against tropical wallpaper"></button>
+            <button class="tile" type="button" data-full="img/m-lounge-full.webp"><img src="img/m-lounge.webp" width="720" height="480" loading="lazy" alt="The lounge with pink banquettes, screens and greenery lights"></button>
+            <button class="tile" type="button" data-full="img/m-toast-full.webp"><img src="img/m-toast.webp" width="320" height="480" loading="lazy" alt="Two guests toasting wine under the Seek neon sign"></button>
+            <button class="tile" type="button" data-full="img/m-chandelier-full.webp"><img src="img/m-chandelier.webp" width="720" height="480" loading="lazy" alt="Teal bar with round mirrors and the glowing floral light installation"></button>
+            <button class="tile" type="button" data-full="img/m-banquette-full.webp"><img src="img/m-banquette.webp" width="320" height="480" loading="lazy" alt="Patio banquette with red marble tables and hanging plants"></button>
+            <button class="tile" type="button" data-full="img/m-patio-doors-full.webp"><img src="img/m-patio-doors.webp" width="720" height="480" loading="lazy" alt="Bar beside glass garage doors looking out to the patio"></button>
+          </div>
+        </div>
+        <div class="marquee-row reverse">
+          <div class="track">
+            <button class="tile" type="button" data-full="img/m-strawberry-full.webp"><img src="img/m-strawberry.webp" width="311" height="480" loading="lazy" alt="Frozen strawberry cocktail in a flute"></button>
+            <button class="tile" type="button" data-full="img/m-spread-full.webp"><img src="img/m-spread.webp" width="589" height="480" loading="lazy" alt="Overhead spread of shared plates and a margarita"></button>
+            <button class="tile" type="button" data-full="img/m-rosemary-full.webp"><img src="img/m-rosemary.webp" width="320" height="480" loading="lazy" alt="Pink cocktail with a rosemary sprig"></button>
+            <button class="tile" type="button" data-full="img/m-patio-full.webp"><img src="img/m-patio.webp" width="320" height="480" loading="lazy" alt="Covered patio seating with planters and greenery"></button>
+            <button class="tile" type="button" data-full="img/m-margarita-full.webp"><img src="img/m-margarita.webp" width="384" height="480" loading="lazy" alt="Salt-rimmed margarita among shared plates"></button>
+            <button class="tile" type="button" data-full="img/m-flowers-full.webp"><img src="img/m-flowers.webp" width="320" height="480" loading="lazy" alt="Floral light installation glowing above the bar"></button>
+            <button class="tile" type="button" data-full="img/m-lemon-full.webp"><img src="img/m-lemon.webp" width="320" height="480" loading="lazy" alt="Pink cocktail with a lemon wheel"></button>
+          </div>
+        </div>
+      </div>
+      <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+        <img alt="">
+        <button class="lb-close" type="button" aria-label="Close">&times;</button>
+        <button class="lb-prev" type="button" aria-label="Previous photo">&#8249;</button>
+        <button class="lb-next" type="button" aria-label="Next photo">&#8250;</button>
+        <p class="lb-count" aria-live="polite"></p>
+      </dialog>
+    </section>
+
+    <!-- 5. EVENT BOOKING -->
+    <section class="events" id="events" aria-labelledby="evTitle">
+      <div class="events-bg">
+        <img src="img/events-lounge-640.webp" srcset="img/events-lounge-640.webp 640w, img/events-lounge-1280.webp 1280w" sizes="100vw" width="1280" height="853" loading="lazy" alt="">
+      </div>
+      <div class="wrap events-grid">
+        <div class="events-copy reveal">
+          <p class="eyebrow">Private events</p>
+          <h2 id="evTitle">Book the <em>room.</em></h2>
+          <p>Birthdays, day parties, team nights and celebrations. Reserve a section, the lounge, the patio or the full venue, with food and drink packages built around your group.</p>
+          <ul class="perks">
+            <li>Lounge seating with wall-to-wall screens</li>
+            <li>Covered patio for daytime parties</li>
+            <li>Custom food, wine and cocktail packages</li>
+          </ul>
+        </div>
+
+        <!-- Replace YOUR_FORM_ID with the client's Formspree form ID -->
+        <form class="event-form reveal" id="eventForm" action="https://formspree.io/f/YOUR_FORM_ID" method="post" novalidate>
+          <h3>Event inquiry</h3>
+          <div class="field-row">
+            <label>Name<input type="text" name="name" id="f-name" autocomplete="name" required></label>
+            <label>Phone<input type="tel" name="phone" id="f-phone" autocomplete="tel"></label>
+          </div>
+          <label>Email<input type="email" name="email" id="f-email" autocomplete="email" required></label>
+          <div class="field-row">
+            <label>Event date<input type="date" name="date" id="eventDate" required></label>
+            <label>Guests<input type="number" name="guests" id="f-guests" min="2" max="300" inputmode="numeric" required></label>
+          </div>
+          <label>Event type
+            <select name="event_type" id="f-type" required>
+              <option value="" selected disabled>Choose one</option>
+              <option>Birthday</option>
+              <option>Day party</option>
+              <option>Corporate / team event</option>
+              <option>Private dinner</option>
+              <option>Full venue buyout</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Details<textarea name="message" id="f-message" rows="3" placeholder="Time, budget, food and drink needs"></textarea></label>
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-pink btn-block" type="submit">Send inquiry</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div>
-        <p class="label">Questions?</p>
-        <h2>Contact us</h2>
-        <p>Planning a private event or a group night? Send a note and the team will get back to you.</p>
+    <!-- VISIT -->
+    <section class="visit" id="visit" aria-labelledby="visitTitle">
+      <div class="wrap visit-grid">
+        <div class="visit-media reveal">
+          <img src="img/visit-patio-640.webp" srcset="img/visit-patio-640.webp 640w, img/visit-patio-853.webp 853w" sizes="(min-width: 900px) 40vw, 100vw" width="853" height="1066" loading="lazy" alt="Seek's covered patio with greenery, a floral banquette and marble tables">
+        </div>
+        <div class="visit-copy reveal">
+          <p class="eyebrow">Visit</p>
+          <h2 id="visitTitle">Find your seat <em>at Seek.</em></h2>
+          <address>3011 Gulden Ln, Ste 112<br>Dallas, TX 75212</address>
+          <ul class="hours" id="hoursList">
+            <li data-day="3"><span>Wednesday</span><span>7 PM &ndash; 12 AM</span></li>
+            <li data-day="4"><span>Thursday</span><span>6 &ndash; 10 PM</span></li>
+            <li data-day="5"><span>Friday</span><span>6 PM &ndash; 1 AM</span></li>
+            <li data-day="6"><span>Saturday</span><span>3 PM &ndash; 1 AM</span></li>
+            <li data-day="0"><span>Sunday</span><span>3 &ndash; 10 PM</span></li>
+            <li data-day="1"><span>Monday</span><span>Closed</span></li>
+            <li data-day="2"><span>Tuesday</span><span>Closed</span></li>
+          </ul>
+          <p class="fine">Hours may change for private events. Check Instagram for the latest.</p>
+          <div class="actions">
+            <a class="btn btn-pink" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Reserve</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Seek+Trinity+Groves+3011+Gulden+Ln+Ste+112+Dallas+TX+75212" target="_blank" rel="noopener">Get directions</a>
+          </div>
+        </div>
       </div>
-      <!-- Replace YOUR_FORM_ID with your Formspree (or other) endpoint -->
-      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="post">
-        <label>Name<input type="text" name="name" autocomplete="name" required></label>
-        <label>Email<input type="email" name="email" autocomplete="email" required></label>
-        <label>Message<textarea name="message" rows="4" required></textarea></label>
-        <button class="btn" type="submit">Contact us</button>
-        <p class="status" id="formStatus" role="status"></p>
-      </form>
-    </section>
-
-    <section class="reserve">
-      <svg class="sprig" viewBox="0 0 160 40" aria-hidden="true"><use href="#sprig"/></svg>
-      <h2>Want to reserve?</h2>
-      <p>Book your table for dinner, drinks or a night on the patio.</p>
-      <a class="btn btn-dark" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Reserve a table</a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="foot-grid">
-      <div>
-        <a class="logo" href="#top">Seek</a>
-        <p><a href="https://www.instagram.com/seek_dallas/" target="_blank" rel="noopener">Instagram</a></p>
-      </div>
-      <div>
-        <h3>Address</h3>
-        <address>3011 Gulden Ln, Ste 112<br>Dallas, TX 75212</address>
-        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Seek+Trinity+Groves+3011+Gulden+Ln+Ste+112+Dallas+TX+75212" target="_blank" rel="noopener">Get directions</a></p>
-      </div>
-      <div>
-        <h3>Opening hours</h3>
-        <ul class="hours">
-          <li data-day="1"><span>Monday</span><span>Closed</span></li>
-          <li data-day="2"><span>Tuesday</span><span>Closed</span></li>
-          <li data-day="3"><span>Wednesday</span><span>6 PM &ndash; 12 AM</span></li>
-          <li data-day="4"><span>Thursday</span><span>6 PM &ndash; 10 PM</span></li>
-          <li data-day="5"><span>Friday</span><span>6 PM &ndash; 2 AM</span></li>
-          <li data-day="6"><span>Saturday</span><span>3 PM &ndash; 1 AM</span></li>
-          <li data-day="0"><span>Sunday</span><span>6 PM &ndash; 10 PM</span></li>
-        </ul>
-        <p class="fine">Hours can vary for day parties and private events.</p>
-      </div>
-    </div>
-    <div class="foot-base">
-      <a href="#">Privacy policy</a>
-      <p>&copy; <span id="year">2026</span> Seek Trinity Groves. All rights reserved.</p>
+    <div class="wrap foot">
+      <img src="img/logo.png" width="307" height="130" alt="Seek Trinity Groves" loading="lazy">
+      <p class="foot-tag">Restaurant &middot; Bar &middot; Lounge</p>
+      <nav aria-label="Social and links">
+        <a href="https://www.instagram.com/seek.trinity/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61593301493439" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Resy</a>
+        <a href="#events">Private events</a>
+      </nav>
+      <p>&copy; <span id="year">2026</span> Seek Trinity Groves &middot; Please drink responsibly.</p>
     </div>
   </footer>
+
+  <!-- Mobile action bar -->
+  <nav class="action-bar" aria-label="Quick actions">
+    <a href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener" class="primary">Reserve</a>
+    <a href="#menu">Menu</a>
+    <a href="#events">Events</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Seek+Trinity+Groves+3011+Gulden+Ln+Ste+112+Dallas+TX+75212" target="_blank" rel="noopener">Directions</a>
+  </nav>
 
   <script src="script.js" defer></script>
 </body>
