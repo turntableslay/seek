@@ -122,14 +122,6 @@
           <li><span>On tonight</span><strong id="todayEvent">See the lineup</strong></li>
           <li><span>Happy hour</span><strong id="todayHH">See times</strong></li>
         </ul>
-        <div class="slide-controls" role="group" aria-label="Slideshow controls">
-          <span class="slide-caption" id="slideCaption" aria-live="polite">The bar</span>
-          <div class="dots" id="slideDots"></div>
-          <button class="slide-btn" type="button" id="slidePause" aria-label="Pause slideshow" aria-pressed="false">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-pause"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-play"><path d="M8 5.5v13l11-6.5z"/></svg>
-          </button>
-        </div>
       </div>
     </section>
 
@@ -240,7 +232,12 @@
         <img id="mdImg" src="img/menu-food.webp" width="1402" height="1122" alt="Seek Trinity Groves food menu: appetizers, entr&eacute;es, sides, combo baskets, nachos, desserts and healthy choices with prices">
       </div>
       <div class="md-foot">
-        <span class="md-hint" id="mdHint">Tap the menu to zoom</span>
+        <div class="md-zoom" role="group" aria-label="Zoom">
+          <button type="button" id="mdZoomOut" aria-label="Zoom out" disabled>&minus;</button>
+          <span id="mdZoomLabel" aria-live="polite">100%</span>
+          <button type="button" id="mdZoomIn" aria-label="Zoom in">+</button>
+        </div>
+        <span class="md-hint">Tap or pinch to zoom</span>
         <a class="md-full" id="mdFull" href="img/menu-food.webp" target="_blank" rel="noopener">Open full size</a>
         <a class="btn btn-pink btn-sm" href="https://resy.com/cities/dallas-fort-worth-tx/venues/seek-trinity-groves" target="_blank" rel="noopener">Reserve</a>
       </div>

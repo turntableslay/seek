@@ -65,7 +65,7 @@
   let current = 0, timer = null, userPaused = reduceMotion, hoverPaused = false;
   hero.style.setProperty('--slide-ms', `${SLIDE_MS}ms`);
 
-  const dots = slides.map((s, i) => {
+  const dots = !dotsWrap ? [] : slides.map((s, i) => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'dot';
     b.setAttribute('aria-label', `Show photo ${i + 1}: ${s.dataset.caption}`);
@@ -86,7 +86,7 @@
       d.removeAttribute('aria-current');
       if (n === current) { void d.offsetWidth; d.setAttribute('aria-current', 'true'); }
     });
-    caption.textContent = slides[current].dataset.caption;
+    if (caption) caption.textContent = slides[current].dataset.caption;
     // warm up the next image so the crossfade never shows a blank frame
     const next = $('img', slides[(current + 1) % slides.length]);
     if (next.loading === 'lazy') next.loading = 'eager';
@@ -97,14 +97,16 @@
     hero.classList.toggle('paused', paused);
     if (!paused) timer = setInterval(() => go(current + 1), SLIDE_MS);
   }
-  pauseBtn.addEventListener('click', () => {
+  if (pauseBtn) pauseBtn.addEventListener('click', () => {
     userPaused = !userPaused;
     pauseBtn.setAttribute('aria-pressed', userPaused);
     pauseBtn.setAttribute('aria-label', userPaused ? 'Play slideshow' : 'Pause slideshow');
     if (!userPaused) go(current);
     restart();
   });
-  if (reduceMotion) { pauseBtn.setAttribute('aria-pressed', 'true'); pauseBtn.setAttribute('aria-label', 'Play slideshow'); }
+  if (reduceMotion && pauseBtn) { pauseBtn.setAttribute('aria-pressed', 'true'); pauseBtn.setAttribute('aria-label', 'Play slideshow'); }
+  hero.addEventListener('mouseenter', () => { hoverPaused = true; restart(); });
+  hero.addEventListener('mouseleave', () => { hoverPaused = false; restart(); });
   $('.hero-inner').addEventListener('focusin', () => { hoverPaused = true; restart(); });
   $('.hero-inner').addEventListener('focusout', () => { hoverPaused = false; restart(); });
   document.addEventListener('visibilitychange', restart);
@@ -287,7 +289,7 @@
     });
   }
 
-  /* ---------- Menu viewer ---------- */
+  /* ---------- Menu viewer: fit to screen, tap / pinch / buttons to zoom ---------- */
   const md = $('#menuDialog');
   if (md && typeof md.showModal === 'function') {
     const MENUS = {
@@ -296,40 +298,93 @@
       drinks: { title: 'Drink menu', src: 'img/menu-drinks.webp', w: 1536, h: 1024,
         alt: 'Seek Trinity Groves drink menu: cocktails, wine, bottle service, champagne, beer and non-alcoholic drinks with prices' }
     };
-    const body = $('#mdBody'), img = $('#mdImg'), full = $('#mdFull'), hint = $('#mdHint'), title = $('#menuDialogTitle');
-    let which = 'food', opener = null;
-    const setZoom = (on, x = .5, y = .3) => {
-      body.classList.toggle('zoomed', on);
-      hint.textContent = on ? 'Drag to look around · tap to fit' : (matchMedia('(max-width: 640px)').matches ? 'Swipe across to read · tap to zoom' : 'Tap the menu to zoom');
-      if (on) requestAnimationFrame(() => {
-        body.scrollLeft = (body.scrollWidth - body.clientWidth) * x;
-        body.scrollTop = (body.scrollHeight - body.clientHeight) * y;
-      });
+    const body = $('#mdBody'), img = $('#mdImg'), full = $('#mdFull'), title = $('#menuDialogTitle');
+    const zIn = $('#mdZoomIn'), zOut = $('#mdZoomOut'), zLabel = $('#mdZoomLabel');
+    const MIN = 1, MAX = 4;
+    let which = 'food', opener = null, zoom = 1, fitW = 0;
+
+    // width of the image when it fits the viewer
+    const measureFit = () => {
+      const m = MENUS[which];
+      const cs = getComputedStyle(body);
+      const cw = body.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      const ch = body.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+      fitW = Math.max(100, Math.min(cw, ch * (m.w / m.h)));
     };
+    // fx, fy: point (0–1 of the image) to keep under the finger / centered
+    const setZoom = (z, fx = .5, fy = .5) => {
+      zoom = Math.min(MAX, Math.max(MIN, z));
+      if (!fitW) measureFit();
+      const zoomed = zoom > 1.01;
+      body.classList.toggle('zoomed', zoomed);
+      img.style.width = `${Math.round(fitW * zoom)}px`;
+      zLabel.textContent = `${Math.round(zoom * 100)}%`;
+      zOut.disabled = !zoomed; zIn.disabled = zoom >= MAX;
+      if (zoomed) {
+        body.scrollLeft = img.offsetWidth * fx - body.clientWidth / 2 + img.offsetLeft;
+        body.scrollTop = img.offsetHeight * fy - body.clientHeight / 2 + img.offsetTop;
+      }
+    };
+    // which point of the image is in the middle of the viewer right now
+    const centerPoint = () => zoom <= 1.01 ? [.5, .5] : [
+      (body.scrollLeft + body.clientWidth / 2 - img.offsetLeft) / img.offsetWidth,
+      (body.scrollTop + body.clientHeight / 2 - img.offsetTop) / img.offsetHeight
+    ];
     const show = key => {
       which = key; const m = MENUS[key];
       img.src = m.src; img.width = m.w; img.height = m.h; img.alt = m.alt;
       full.href = m.src; title.textContent = m.title;
       $$('[data-menu]', md).forEach(b => b.setAttribute('aria-pressed', b.dataset.menu === key));
-      setZoom(false); body.scrollTop = 0;
+      fitW = 0; setZoom(1); body.scrollTop = 0; body.scrollLeft = 0;
     };
+
     $$('[data-menu-open]').forEach(el => el.addEventListener('click', e => {
-      e.preventDefault(); opener = el; show(el.dataset.menuOpen); md.showModal();
+      e.preventDefault(); opener = el; md.showModal(); show(el.dataset.menuOpen);
       document.documentElement.classList.add('modal-open');
     }));
     $$('[data-menu]', md).forEach(b => b.addEventListener('click', () => show(b.dataset.menu)));
     $('.md-close', md).addEventListener('click', () => md.close());
     md.addEventListener('click', e => { if (e.target === md) md.close(); });
     md.addEventListener('close', () => { document.documentElement.classList.remove('modal-open'); if (opener) opener.focus(); });
+    zIn.addEventListener('click', () => { const [x, y] = centerPoint(); setZoom(zoom + .5, x, y); });
+    zOut.addEventListener('click', () => { const [x, y] = centerPoint(); setZoom(zoom - .5, x, y); });
+    window.addEventListener('resize', () => { if (md.open) { const [x, y] = centerPoint(); fitW = 0; measureFit(); setZoom(zoom, x, y); } });
+
+    // tap / click: zoom in to 2.5x at that spot, tap again to fit
+    let moved = false;
     img.addEventListener('click', e => {
-      if (body.classList.contains('zoomed')) return setZoom(false);
+      if (moved) return;
+      if (zoom > 1.01) return setZoom(1);
       const r = img.getBoundingClientRect();
-      setZoom(true, (e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height);
+      setZoom(2.5, (e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height);
     });
+
+    // two-finger pinch inside the viewer (page itself does not zoom)
+    let pinch = null;
+    const dist = t => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+    body.addEventListener('touchstart', e => {
+      moved = false;
+      if (e.touches.length === 2) {
+        const r = img.getBoundingClientRect();
+        const mx = (e.touches[0].clientX + e.touches[1].clientX) / 2, my = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        pinch = { d: dist(e.touches), z: zoom, fx: (mx - r.left) / r.width, fy: (my - r.top) / r.height };
+      }
+    }, { passive: true });
+    body.addEventListener('touchmove', e => {
+      moved = true;
+      if (pinch && e.touches.length === 2) {
+        e.preventDefault();
+        setZoom(pinch.z * dist(e.touches) / pinch.d, pinch.fx, pinch.fy);
+      }
+    }, { passive: false });
+    body.addEventListener('touchend', e => { if (e.touches.length < 2) pinch = null; setTimeout(() => { moved = false; }, 50); });
+
     md.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') show(which === 'food' ? 'drinks' : 'food');
+      if (e.key === '+' || e.key === '=') zIn.click();
+      if (e.key === '-') zOut.click();
+      if (e.key === 'ArrowRight' && zoom <= 1.01) show('drinks');
+      if (e.key === 'ArrowLeft' && zoom <= 1.01) show('food');
     });
-    // preload the other menu
     const pre = new Image(); pre.src = MENUS.drinks.src;
   }
 
